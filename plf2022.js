@@ -3,16 +3,28 @@
 
 const salaireBrutMoy2d = 76701;
 const salaireBrutMoy1d = 63625;
+const suppressionPostesBlanquer2d = 8000;
 
+let augmentationBudget = 0;
+
+
+// Indiquer le résultat final
+function printResult(montant) {
+  document.getElementById('resultat').textContent = montant;
+  let arrondi = montant / 1e9;
+  document.getElementById('milliards').textContent = Math.round(arrondi*1000)/1000;
+}
 
 
 // Gestion des suppressions de postes dans le 2d degré
 function suppressionPostes2d(case_cochee) {
+  let cout8000postes2d = suppressionPostesBlanquer2d*salaireBrutMoy2d;
   if (case_cochee.checked) {
-    console.log("vous avez coché la case");
+    augmentationBudget += cout8000postes2d;
   } else {
-    console.log("vous avez décoché la case");
+    augmentationBudget -= cout8000postes2d;
   }
+  printResult(augmentationBudget);
 }
 
 // Gestion des suppressions de postes dans le 2d degré
