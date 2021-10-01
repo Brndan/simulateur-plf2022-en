@@ -56,7 +56,7 @@ function aeshTempsPlein(case_cochee) {
   printResult(augmentationBudget);
 }
 
-// Gestion des suppressions de postes dans le 2d degré
+// Gestion des directions
 function dechargesDirection(case_cochee) {
   if (case_cochee.checked) {
     console.log("vous avez coché la case");
@@ -65,7 +65,7 @@ function dechargesDirection(case_cochee) {
   }
 }
 
-// Gestion des suppressions de postes dans le 2d degré
+// RASED
 function remonterRased(case_cochee) {
   if (case_cochee.checked) {
     console.log("vous avez coché la case");
@@ -75,7 +75,7 @@ function remonterRased(case_cochee) {
 }
 
 
-// Gestion des suppressions de postes dans le 2d degré
+// Gestion des remplaçant⋅es 1d
 function augmenterRemplacement1d(case_cochee) {
   if (case_cochee.checked) {
     console.log("vous avez coché la case");
@@ -84,6 +84,23 @@ function augmenterRemplacement1d(case_cochee) {
   }
 }
 
+// Gestion référent⋅es égalité
+function refEgalite(case_cochee) {
+  if (case_cochee.checked) {
+    console.log("vous avez coché la case");
+  } else {
+    console.log("vous avez décoché la case");
+  }
+}
+
+// Gestion référent⋅es écologie
+function refEcologie(case_cochee) {
+  if (case_cochee.checked) {
+    console.log("vous avez coché la case");
+  } else {
+    console.log("vous avez décoché la case");
+  }
+}
 
 /* Gestionnaire d’événements */
 
@@ -123,4 +140,16 @@ rased.addEventListener("change", (event) => {
 const remplacement1d = document.querySelector('input[id="remplacement1d"]');
 remplacement1d.addEventListener("change", (event) => {
   augmenterRemplacement1d(remplacement1d);
+});
+
+// Évenement pour les refs antisexisme
+const refantisexisme = document.querySelector('input[id="referenteEgalite"]');
+refantisexisme.addEventListener("change", (event) => {
+  refEgalite(refantisexisme);
+});
+
+// Évenement pour les refs écologie
+const refecolo = document.querySelector('input[id="referenteEcologie"]');
+refecolo.addEventListener("change", (event) => {
+  refEcologie(refecolo);
 });
