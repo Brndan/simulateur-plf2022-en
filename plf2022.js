@@ -4,6 +4,7 @@
 const salaireBrutMoy2d = 76701;
 const salaireBrutMoy1d = 63625;
 const suppressionPostesBlanquer2d = 8000;
+const enseignants2d = 391 * 1e3;
 
 let augmentationBudget = 0;
 
@@ -29,11 +30,13 @@ function suppressionPostes2d(case_cochee) {
 
 // Gestion des suppressions de postes dans le 2d degré
 function diminuerEffectifs2d(case_cochee) {
+  let coutProfsEnPlus = (enseignants2d / 10) * salaireBrutMoy2d;
   if (case_cochee.checked) {
-    console.log("vous avez coché la case");
+    augmentationBudget += coutProfsEnPlus;
   } else {
-    console.log("vous avez décoché la case");
+    augmentationBudget -= coutProfsEnPlus;
   }
+  printResult(augmentationBudget);
 }
 
 
