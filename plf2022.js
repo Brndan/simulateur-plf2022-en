@@ -1,9 +1,13 @@
 
 // déclaration des variables globales
 
+const salaireBrutMoy2d = 76701;
+const salaireBrutMoy1d = 63625;
+
+
 
 // Gestion des suppressions de postes dans le 2d degré
-function  suppressionPostes2d(case_cochee) {
+function suppressionPostes2d(case_cochee) {
   if (case_cochee.checked) {
     console.log("vous avez coché la case");
   } else {
@@ -12,35 +16,7 @@ function  suppressionPostes2d(case_cochee) {
 }
 
 // Gestion des suppressions de postes dans le 2d degré
-function  diminuerEffectifs2d(case_cochee) {
-  if (case_cochee.checked) {
-    console.log("vous avez coché la case");
-  } else {
-    console.log("vous avez décoché la case");
-  }
-}
-
-
-// Gestion des suppressions de postes dans le 2d degré
-function  aeshTempsPlein(case_cochee) {
-  if (case_cochee.checked) {
-    console.log("vous avez coché la case");
-  } else {
-    console.log("vous avez décoché la case");
-  }
-}
-
-// Gestion des suppressions de postes dans le 2d degré
-function  dechargesDirection(case_cochee) {
-  if (case_cochee.checked) {
-    console.log("vous avez coché la case");
-  } else {
-    console.log("vous avez décoché la case");
-  }
-}
-
-// Gestion des suppressions de postes dans le 2d degré
-function  remonterRased(case_cochee) {
+function diminuerEffectifs2d(case_cochee) {
   if (case_cochee.checked) {
     console.log("vous avez coché la case");
   } else {
@@ -50,7 +26,35 @@ function  remonterRased(case_cochee) {
 
 
 // Gestion des suppressions de postes dans le 2d degré
-function  augmenterRemplacement1d(case_cochee) {
+function aeshTempsPlein(case_cochee) {
+  if (case_cochee.checked) {
+    console.log("vous avez coché la case");
+  } else {
+    console.log("vous avez décoché la case");
+  }
+}
+
+// Gestion des suppressions de postes dans le 2d degré
+function dechargesDirection(case_cochee) {
+  if (case_cochee.checked) {
+    console.log("vous avez coché la case");
+  } else {
+    console.log("vous avez décoché la case");
+  }
+}
+
+// Gestion des suppressions de postes dans le 2d degré
+function remonterRased(case_cochee) {
+  if (case_cochee.checked) {
+    console.log("vous avez coché la case");
+  } else {
+    console.log("vous avez décoché la case");
+  }
+}
+
+
+// Gestion des suppressions de postes dans le 2d degré
+function augmenterRemplacement1d(case_cochee) {
   if (case_cochee.checked) {
     console.log("vous avez coché la case");
   } else {
