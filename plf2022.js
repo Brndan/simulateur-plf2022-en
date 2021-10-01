@@ -3,8 +3,12 @@
 
 const salaireBrutMoy2d = 76701;
 const salaireBrutMoy1d = 63625;
+const salaireBrutMoyAesh = 1.4 * 750;
+
 const suppressionPostesBlanquer2d = 8000;
 const enseignants2d = 391 * 1e3;
+const nbAesh = 142 * 1e3;
+const etpAESH = 77584;
 
 let augmentationBudget = 0;
 
@@ -40,13 +44,16 @@ function diminuerEffectifs2d(case_cochee) {
 }
 
 
-// Gestion des suppressions de postes dans le 2d degré
+// AESH à temps plein
 function aeshTempsPlein(case_cochee) {
+  let coutAeshActuel = salaireBrutMoyAesh * nbAesh ;
+  let coutAeshTempsPlein = Math.round(coutAeshActuel * (nbAesh / etpAESH));
   if (case_cochee.checked) {
-    console.log("vous avez coché la case");
+    augmentationBudget += coutAeshTempsPlein;
   } else {
-    console.log("vous avez décoché la case");
+    augmentationBudget -= coutAeshTempsPlein;
   }
+  printResult(augmentationBudget);
 }
 
 // Gestion des suppressions de postes dans le 2d degré
