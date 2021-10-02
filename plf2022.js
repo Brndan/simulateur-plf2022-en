@@ -62,14 +62,6 @@ function aeshTempsPlein(case_cochee) {
   printResult(augmentationBudget);
 }
 
-// Gestion des directions
-function dechargesDirection(case_cochee) {
-  if (case_cochee.checked) {
-    console.log("vous avez coché la case");
-  } else {
-    console.log("vous avez décoché la case");
-  }
-}
 
 // RASED
 function remonterRased(case_cochee) {
