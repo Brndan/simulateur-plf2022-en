@@ -10,6 +10,8 @@ const enseignants2d = 391 * 1e3;
 const nbAesh = 142 * 1e3;
 const etpAESH = 77584;
 
+const departements = 101;
+
 let augmentationBudget = 0;
 
 
@@ -32,7 +34,7 @@ function suppressionPostes2d(case_cochee) {
   printResult(augmentationBudget);
 }
 
-// Gestion des suppressions de postes dans le 2d degré
+// Augmenter les postes de 10% le 2d degré
 function diminuerEffectifs2d(case_cochee) {
   let coutProfsEnPlus = (enseignants2d / 10) * salaireBrutMoy2d;
   if (case_cochee.checked) {
@@ -86,20 +88,24 @@ function augmenterRemplacement1d(case_cochee) {
 
 // Gestion référent⋅es égalité
 function refEgalite(case_cochee) {
+  let coutrefEgalite = departements * salaireBrutMoy2d;
   if (case_cochee.checked) {
-    console.log("vous avez coché la case");
+    augmentationBudget += coutrefEgalite;
   } else {
-    console.log("vous avez décoché la case");
+    augmentationBudget -= coutrefEgalite;
   }
+  printResult(augmentationBudget);
 }
 
 // Gestion référent⋅es écologie
 function refEcologie(case_cochee) {
+  let coutrefAntisexisme = departements * salaireBrutMoy2d;
   if (case_cochee.checked) {
-    console.log("vous avez coché la case");
+    augmentationBudget += coutrefAntisexisme;
   } else {
-    console.log("vous avez décoché la case");
+    augmentationBudget -= coutrefAntisexisme;
   }
+  printResult(augmentationBudget);
 }
 
 /* Gestionnaire d’événements */
