@@ -1,6 +1,8 @@
 
 // déclaration des variables globales
 
+const budget2022 = 78.1 * 1e9;
+
 const salaireBrutMoy2d = 76701;
 const salaireBrutMoy1d = 63625;
 const salaireBrutMoyAesh = 1.4 * 750;
@@ -20,6 +22,8 @@ function printResult(montant) {
   document.getElementById('resultat').textContent = montant;
   let arrondi = montant / 1e9;
   document.getElementById('milliards').textContent = Math.round(arrondi*1000)/1000;
+  let pourcentageBudget = (montant / budget2022) * 100;
+  document.getElementById('budgetPourCent').textContent = Math.round(pourcentageBudget * 100)/100;
 }
 
 
