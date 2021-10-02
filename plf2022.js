@@ -8,7 +8,9 @@ const salaireBrutMoy1d = 63625;
 const salaireBrutMoyAesh = 1.4 * 750;
 
 const suppressionPostesBlanquer2d = 8000;
-const enseignants2d = 391 * 1e3;
+const enseignants2d = 396 * 1e3;
+const enseignants1d = 357 * 1e3;
+const remplacantes1d = 30000;
 const nbAesh = 142 * 1e3;
 const etpAESH = 77584;
 const rasedSupprimes = 5000;
@@ -78,11 +80,13 @@ function remonterRased(case_cochee) {
 
 // Gestion des remplaçant⋅es 1d
 function augmenterRemplacement1d(case_cochee) {
+  let budgetRemplacement1d = (remplacantes1d * 0.25) * salaireBrutMoy1d;
   if (case_cochee.checked) {
-    console.log("vous avez coché la case");
+    augmentationBudget += budgetRemplacement1d;
   } else {
-    console.log("vous avez décoché la case");
+    augmentationBudget -= budgetRemplacement1d;
   }
+  printResult(augmentationBudget);
 }
 
 // Gestion référent⋅es égalité
