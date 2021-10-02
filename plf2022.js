@@ -26,9 +26,9 @@ let augmentationBudget = 0;
 function printResult(montant) {
   document.getElementById('resultat').textContent = montant.toLocaleString();
   let arrondi = montant / 1e9;
-  document.getElementById('milliards').textContent = (Math.round(arrondi*1000)/1000).toLocaleString();
+  document.getElementById('milliards').textContent = (Math.round(arrondi * 1000) / 1000).toLocaleString();
   let pourcentageBudget = (montant / budget2022) * 100;
-  document.getElementById('budgetPourCent').textContent = (Math.round(pourcentageBudget * 100)/100).toLocaleString();
+  document.getElementById('budgetPourCent').textContent = (Math.round(pourcentageBudget * 100) / 100).toLocaleString();
 }
 
 // Gestion des stagiaires
@@ -44,7 +44,7 @@ function remunererStagiaires(case_cochee) {
 
 // Gestion des suppressions de postes dans le 2d degré
 function suppressionPostes2d(case_cochee) {
-  let cout8000postes2d = suppressionPostesBlanquer2d*salaireBrutMoy2d;
+  let cout8000postes2d = suppressionPostesBlanquer2d * salaireBrutMoy2d;
   if (case_cochee.checked) {
     augmentationBudget += cout8000postes2d;
   } else {
@@ -67,7 +67,7 @@ function diminuerEffectifs2d(case_cochee) {
 
 // AESH à temps plein
 function aeshTempsPlein(case_cochee) {
-  let coutAeshActuel = salaireBrutMoyAesh * nbAesh ;
+  let coutAeshActuel = salaireBrutMoyAesh * nbAesh;
   let coutAeshTempsPlein = Math.round(coutAeshActuel * (nbAesh / etpAESH));
   if (case_cochee.checked) {
     augmentationBudget += coutAeshTempsPlein;
