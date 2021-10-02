@@ -11,6 +11,7 @@ const suppressionPostesBlanquer2d = 8000;
 const enseignants2d = 391 * 1e3;
 const nbAesh = 142 * 1e3;
 const etpAESH = 77584;
+const rasedSupprimes = 5000;
 
 const departements = 101;
 
@@ -65,11 +66,13 @@ function aeshTempsPlein(case_cochee) {
 
 // RASED
 function remonterRased(case_cochee) {
+  let budgetRased = rasedSupprimes * salaireBrutMoy1d;
   if (case_cochee.checked) {
-    console.log("vous avez coché la case");
+    augmentationBudget += budgetRased;
   } else {
-    console.log("vous avez décoché la case");
+    augmentationBudget -= budgetRased;
   }
+  printResult(augmentationBudget);
 }
 
 
@@ -125,11 +128,6 @@ aesh.addEventListener("change", (event) => {
   aeshTempsPlein(aesh);
 });
 
-// Événement pour les décharges de direction 
-const direction = document.querySelector('input[id="direction"]');
-direction.addEventListener("change", (event) => {
-  dechargesDirection(direction);
-});
 
 // Événement pour les RASED 
 const rased = document.querySelector('input[id="rased"]');
