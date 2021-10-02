@@ -24,11 +24,11 @@ let augmentationBudget = 0;
 
 // Indiquer le résultat final
 function printResult(montant) {
-  document.getElementById('resultat').textContent = montant;
+  document.getElementById('resultat').textContent = montant.toLocaleString();
   let arrondi = montant / 1e9;
-  document.getElementById('milliards').textContent = Math.round(arrondi*1000)/1000;
+  document.getElementById('milliards').textContent = (Math.round(arrondi*1000)/1000).toLocaleString();
   let pourcentageBudget = (montant / budget2022) * 100;
-  document.getElementById('budgetPourCent').textContent = Math.round(pourcentageBudget * 100)/100;
+  document.getElementById('budgetPourCent').textContent = (Math.round(pourcentageBudget * 100)/100).toLocaleString();
 }
 
 // Gestion des stagiaires
