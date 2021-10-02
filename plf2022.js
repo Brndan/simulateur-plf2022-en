@@ -7,6 +7,8 @@ const salaireBrutMoy2d = 76701;
 const salaireBrutMoy1d = 63625;
 const salaireBrutMoyAesh = 1.4 * 750;
 
+const stagiairesPe = 10190;
+const stagiaires2d = 14000;
 const suppressionPostesBlanquer2d = 8000;
 const enseignants2d = 396 * 1e3;
 const enseignants1d = 357 * 1e3;
@@ -29,6 +31,16 @@ function printResult(montant) {
   document.getElementById('budgetPourCent').textContent = Math.round(pourcentageBudget * 100)/100;
 }
 
+// Gestion des stagiaires
+function remunererStagiaires(case_cochee) {
+  let budgetStagiaires = (stagiairesPe * salaireBrutMoy1d) + (stagiaires2d * salaireBrutMoy2d);
+  if (case_cochee.checked) {
+    augmentationBudget += budgetStagiaires;
+  } else {
+    augmentationBudget -= budgetStagiaires;
+  }
+  printResult(augmentationBudget);
+}
 
 // Gestion des suppressions de postes dans le 2d degré
 function suppressionPostes2d(case_cochee) {
@@ -114,6 +126,12 @@ function refEcologie(case_cochee) {
 /* Gestionnaire d’événements */
 
 // Événement pour les suppressions de postes dans le 2d degré
+const stagiaires = document.querySelector('input[id="stagiaires"]');
+stagiaires.addEventListener("change", (event) => {
+  remunererStagiaires(stagiaires);
+});
+
+// Événement pour les suppressions de postes dans le 2d degré
 const suppr2d = document.querySelector('input[id="suppr2d"]');
 suppr2d.addEventListener("change", (event) => {
   suppressionPostes2d(suppr2d);
@@ -138,7 +156,6 @@ const rased = document.querySelector('input[id="rased"]');
 rased.addEventListener("change", (event) => {
   remonterRased(rased);
 });
-
 
 // Événement pour le remplacement 1er degré
 const remplacement1d = document.querySelector('input[id="remplacement1d"]');
