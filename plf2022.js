@@ -12,6 +12,7 @@ const stagiaires2d = 14000;
 const suppressionPostesBlanquer2d = 8000;
 const enseignants2d = 396 * 1e3;
 const enseignants1d = 357 * 1e3;
+const enseignants1dBaisseEffectifs = 27000;
 const remplacantes1d = 30000;
 const nbAesh = 142 * 1e3;
 const etpAESH = 77584;
@@ -64,6 +65,16 @@ function diminuerEffectifs2d(case_cochee) {
   printResult(augmentationBudget);
 }
 
+// Diminuer les effectifs dans le 1er degré
+function diminuerEffectifs1d(case_cochee) {
+  let coutPeEnPlus = enseignants1dBaisseEffectifs * salaireBrutMoy1d;
+  if (case_cochee.checked) {
+    augmentationBudget += coutPeEnPlus;
+  } else {
+    augmentationBudget -= coutPeEnPlus;
+  }
+  printResult(augmentationBudget);
+}
 
 // AESH à temps plein
 function aeshTempsPlein(case_cochee) {
@@ -142,6 +153,12 @@ suppr2d.addEventListener("change", (event) => {
 const effectifs2d = document.querySelector('input[id="effectifs2d"]');
 effectifs2d.addEventListener("change", (event) => {
   diminuerEffectifs2d(effectifs2d);
+});
+
+//Événement pour les réductions d’effectifs dans le 1er degré
+const effectifs1d = document.querySelector('input[id="effectifs1d"]');
+effectifs1d.addEventListener("change", (event) => {
+  diminuerEffectifs1d(effectifs1d);
 });
 
 // Événement pour les AESH à temps plein
