@@ -138,56 +138,56 @@ function refEcologie(case_cochee) {
 
 // Événement pour les suppressions de postes dans le 2d degré
 const stagiaires = document.querySelector('input[id="stagiaires"]');
-stagiaires.addEventListener("change", (event) => {
+stagiaires.addEventListener("change", () => {
   remunererStagiaires(stagiaires);
 });
 
 // Événement pour les suppressions de postes dans le 2d degré
 const suppr2d = document.querySelector('input[id="suppr2d"]');
-suppr2d.addEventListener("change", (event) => {
+suppr2d.addEventListener("change", () => {
   suppressionPostes2d(suppr2d);
 });
 
 
 // Événement pour les réductions d’effectifs dans le 2d degré
 const effectifs2d = document.querySelector('input[id="effectifs2d"]');
-effectifs2d.addEventListener("change", (event) => {
+effectifs2d.addEventListener("change", () => {
   diminuerEffectifs2d(effectifs2d);
 });
 
 //Événement pour les réductions d’effectifs dans le 1er degré
 const effectifs1d = document.querySelector('input[id="effectifs1d"]');
-effectifs1d.addEventListener("change", (event) => {
+effectifs1d.addEventListener("change", () => {
   diminuerEffectifs1d(effectifs1d);
 });
 
 // Événement pour les AESH à temps plein
 const aesh = document.querySelector('input[id="aesh"]');
-aesh.addEventListener("change", (event) => {
+aesh.addEventListener("change", () => {
   aeshTempsPlein(aesh);
 });
 
 
 // Événement pour les RASED 
 const rased = document.querySelector('input[id="rased"]');
-rased.addEventListener("change", (event) => {
+rased.addEventListener("change", () => {
   remonterRased(rased);
 });
 
 // Événement pour le remplacement 1er degré
 const remplacement1d = document.querySelector('input[id="remplacement1d"]');
-remplacement1d.addEventListener("change", (event) => {
+remplacement1d.addEventListener("change", () => {
   augmenterRemplacement1d(remplacement1d);
 });
 
 // Évenement pour les refs antisexisme
 const refantisexisme = document.querySelector('input[id="referenteEgalite"]');
-refantisexisme.addEventListener("change", (event) => {
+refantisexisme.addEventListener("change", () => {
   refEgalite(refantisexisme);
 });
 
 // Évenement pour les refs écologie
 const refecolo = document.querySelector('input[id="referenteEcologie"]');
-refecolo.addEventListener("change", (event) => {
+refecolo.addEventListener("change", () => {
   refEcologie(refecolo);
 });
