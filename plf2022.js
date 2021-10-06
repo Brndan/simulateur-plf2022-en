@@ -14,7 +14,7 @@ const enseignants2d = 396 * 1e3;
 const enseignants1d = 357 * 1e3;
 const enseignants1dBaisseEffectifs = 27000;
 const remplacantes1d = 30000;
-const nbAesh = 142 * 1e3;
+const nbAesh = 125 * 1e3;
 const etpAESH = 77584;
 const rasedSupprimes = 5000;
 
